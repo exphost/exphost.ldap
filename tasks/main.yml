@@ -9,7 +9,7 @@
     state: "{{ldap_entry.state|default(omit)}}"
     bind_dn: "cn={{bindDN}}"
     bind_pw: "{{bindPW}}"
-    server_uri: "ldap://127.0.0.1"
+    server_uri: "{{server_uri|default(\ldap://127.0.0.1')}}"
   loop: "{{content}}"
   loop_control:
     loop_var: ldap_entry
